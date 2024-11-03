@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\Models\Category;
+use Illuminate\Support\Str;
 
 class CategoriesTableSeeder extends Seeder
 {
@@ -13,10 +15,16 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('categories')->insert([
-            ['name' => 'Data Science', 'description' => 'Topics related to data science'],
-            ['name' => 'Network Security', 'description' => 'Topics related to network security'],
-            // Add any additional categories if needed
+        Category::create([
+            'name' => 'Data Science',
+            'description' => 'Topics related to data science',
+            'slug' => Str::slug('Data Science'), 
+        ]);
+
+        Category::create([
+            'name' => 'Network Security',
+            'description' => 'Topics related to network security',
+            'slug' => Str::slug('Network Security'),
         ]);
     }
 }

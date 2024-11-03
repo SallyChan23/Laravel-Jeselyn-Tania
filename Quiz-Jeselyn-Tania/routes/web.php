@@ -15,7 +15,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/category', [CategoryController::class, 'index'])->name('category');
 
-Route::get('/category/{id}', [CategoryController::class, 'show'])->name('category.show');
+Route::get('/category/{slug}', [CategoryController::class, 'show'])->name('category.show');
 
 Route::get('/writers', [WriterController::class, 'index'])->name('writers');
 
