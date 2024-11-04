@@ -8,16 +8,6 @@
     <title>Home</title>
 </head>
 <body>
-    
-    <!-- <ul>
-        @foreach($articles as $article)
-            <li>
-                <h3>{{ $article->title }}</h3>
-                <p>{{ \Illuminate\Support\Str::limit($article->content, 100) }}</p>
-                <a href="{{ route('category.show', $article->category_id) }}">Read more</a>
-            </li>
-        @endforeach
-    </ul> -->
 
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
@@ -57,6 +47,26 @@
   </nav>
 
   <img src="{{ asset('images/banner.jpg') }}" class="img-fluid" alt="">
+
+  <div class="container" style="margin-top: 50px;">
+   
+        <div class="row">
+            @foreach ($articles as $article)
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 d-flex flex-column">
+                        @if($article->image)
+                            <img src="{{ asset('images/' . $article->image) }}" class="card-img-top" alt="{{ $article->title }}">
+                        @endif
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $article->title }}</h5>
+                            <p class="card-text">{{ Str::limit($article->content, 100) }}</p>
+                            <a href="{{ route('article.show', $article->id) }}" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
 
   
   
