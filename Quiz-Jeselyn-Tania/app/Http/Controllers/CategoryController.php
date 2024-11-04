@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Article;
 
 
 class CategoryController extends Controller
@@ -16,8 +17,24 @@ class CategoryController extends Controller
 
     public function show($slug)
     {
-        // Retrieve the category with articles
-        $category = Category::where('slug', $slug)->with('articles')->firstOrFail();
-        return view('category.show', compact('category'));
+        $category = Category::where('slug', $slug)->firstOrFail();
+        $articles = $category->articles; 
+
+        return view('category.show', compact('category', 'articles'));
     }
+
+    // public function dataScience()
+    // {
+    // $category = Category::where('name', 'Data Science')->firstOrFail();
+    // $articles = $category->articles()->where('category_id', $category->id)->get(); // Ensure only articles for Data Science are fetched
+    // return view('category.show', compact('category', 'articles'));
+    // }
+
+    // public function networkSecurity()
+    // {
+    // $category = Category::where('name', 'Network Security')->firstOrFail();
+    // $articles = $category->articles()->where('category_id', $category->id)->get(); // Ensure only articles for Network Security are fetched
+    // return view('category.show', compact('category', 'articles'));
+    // }
 }
+

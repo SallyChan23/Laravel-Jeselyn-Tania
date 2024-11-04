@@ -2,10 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use Faker\Factory as Faker;
+use App\Models\Article;
 
 class ArticlesTableSeeder extends Seeder
 {
@@ -14,16 +12,15 @@ class ArticlesTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $faker = Faker::create();
-
-        foreach (range(1, 20) as $index) {
-            DB::table('articles')->insert([
-                'title' => $faker->sentence,
-                'content' => $faker->paragraph(5),
-                'published_date' => $faker->date,
-                'writer_id' => $faker->numberBetween(1, 10),
-                'category_id' => $faker->numberBetween(1, 2), // Assuming you have 2 categories
-            ]);
-        }
+        Article::create([
+            'title' => 'Machine Learning',
+            'content' => 'Machine learning is a method of data analysis 
+            that automates analytical model building. It is a branch 
+            of artificial intelligence based on the idea that systems 
+            can learn from data, identify patterns and make decisions with 
+            minimal human intervention.',
+            'category_id' => 1, 
+            'image' => 'images/',
+        ]);
     }
 }
