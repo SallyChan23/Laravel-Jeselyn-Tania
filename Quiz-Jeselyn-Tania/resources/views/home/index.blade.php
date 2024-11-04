@@ -46,7 +46,7 @@
     </div>
   </nav>
 
-  <img src="{{ asset('images/banner.jpg') }}" class="img-fluid" alt="">
+  <img style="margin-top: 50px;" src="{{ asset('images/banner.jpg') }}" class="img-fluid d-block mx-auto" alt="">
 
   <div class="container" style="margin-top: 50px;">
    
