@@ -46,8 +46,33 @@
     </div>
   </nav>
 
-  
-  
+  <div class="container mt-5">
+    <h1 class="text-center">About Us</h1>
+    <p class="text-center lead">Welcome to EduFun! We are passionate about providing educational resources and insightful articles to help you grow and learn.</p>
+
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <h3>Our Mission</h3>
+            <p>At EduFun, our mission is to make knowledge accessible to everyone. We believe in the power of learning and strive to create a platform where knowledge is shared openly, supporting learners from all backgrounds.</p>
+        </div>
+        <div class="col-md-6">
+            <h3>Our Vision</h3>
+            <p>We aim to be a leading resource for educational content that inspires, informs, and empowers. Through carefully curated articles, expert insights, and a community of passionate writers, we hope to make learning an engaging experience.</p>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <h3>Contact Us</h3>
+            <p>If you have any questions, feedback, or would like to collaborate with us, feel free to reach out. You can contact us through our website or follow us on our social media channels.</p>
+            <ul>
+                <li>Email: contact@edufun.com</li>
+                <li>Phone: +1 234 567 890</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
   
     
 </body>
