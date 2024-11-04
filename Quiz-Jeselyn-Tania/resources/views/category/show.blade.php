@@ -53,7 +53,7 @@
         <div class="row">
             @foreach ($articles as $article)
                 <div class="col-md-4 mb-4">
-                    <div class="card h-100 d-flex flex-column">
+                    <div class="card h-100 d-flex flex-column" style="height: 100%;">
                         @if($article->image)
                             <img src="{{ asset('images/' . $article->image) }}" class="card-img-top" alt="{{ $article->title }}">
                         @endif

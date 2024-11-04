@@ -31,7 +31,7 @@
         </li>
         @endforeach
         </ul>
-        </li>
+        </li> 
 
         <li class="nav-item">
           <a class="nav-link" href="{{ route('writers') }}">Writers</a>

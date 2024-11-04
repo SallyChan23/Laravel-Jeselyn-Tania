@@ -9,13 +9,50 @@
 </head>
 <body>
 
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">EduFun</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Category
+        </a>
+        <ul class="dropdown-menu">
+          @foreach ($categories as $category)
+        <li>
+            <a class="dropdown-item" href="{{ route('category.show', $category->slug) }}">{{ $category->name }}</a>
+        </li>
+         @endforeach
+        </ul>
+        </li>
 
-<div class="container">
-        <h1>Articles by {{ $writer->name }}</h1>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('writers') }}">Writers</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('about') }}">About Us</a>
+        </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+    <div class="container">
+        <h1 style="margin-top: 50px;">Articles by {{ $writer->name }}</h1>
         <div class="row">
             @foreach ($writer->articles as $article)
                 <div class="col-md-4 mb-4">
-                    <div class="card">
+                    <div class="card h-100 d-flex flex-column">
                         @if($article->image)
                             <img src="{{ asset('images/' . $article->image) }}" class="card-img-top" alt="{{ $article->title }}">
                         @endif

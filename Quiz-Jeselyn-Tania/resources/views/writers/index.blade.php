@@ -65,7 +65,7 @@
   </nav>
   
   <div class="container mt-5">
-    <h1 class="text-center my-4">The Writers</h1>
+    <h1 class="text-center my-4">The Writers</h1> 
     <div class="row">
         @foreach($writers as $writer)
             <div class="col-md-4 mb-4">
