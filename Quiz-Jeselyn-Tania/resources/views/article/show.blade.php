@@ -54,6 +54,12 @@
         <p class="mt-3">{{ $article->content }}</p>
         <a href="{{ route('category.show', $article->category->slug) }}" class="btn btn-secondary mt-3">Back to Category</a>
     </div>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+    <div class="container">
+        <p>&copy; {{ date('Y') }} EduFun. All Rights Reserved.</p>
+    </div>
+    </footer>
     
 </body>
 </html>

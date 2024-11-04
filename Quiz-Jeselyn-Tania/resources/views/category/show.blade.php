@@ -67,6 +67,12 @@
             @endforeach
         </div>
     </div>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+    <div class="container">
+        <p>&copy; {{ date('Y') }} EduFun. All Rights Reserved.</p>
+    </div>
+  </footer>
   
 </body>
 
