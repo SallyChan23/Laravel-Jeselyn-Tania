@@ -15,4 +15,9 @@ class Article extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function writer()
+    {
+        return $this->belongsTo(Writer::class);
+    }
 }

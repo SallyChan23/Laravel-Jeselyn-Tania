@@ -19,8 +19,9 @@ class WritersTableSeeder extends Seeder
 
         foreach (range(1, 10) as $index) {
             DB::table('writers')->insert([
-                'name' => $faker->name,
-                'bio' => $faker->paragraph,
+                'name' => 'name',
+                'bio' => 'paragraph',
+                'profile_picture' => '/images',
             ]);
         }
     }

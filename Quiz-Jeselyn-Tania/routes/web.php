@@ -24,6 +24,6 @@ Route::get('/article/{id}', [ArticleController::class, 'show'])->name('article.s
 
 Route::get('/writers', [WriterController::class, 'index'])->name('writers');
 
-Route::get('/writers/{id}', [WriterController::class, 'show'])->name('writers.show');
+Route::get('/writer/{id}/articles', [WriterController::class, 'showArticles'])->name('writer.articles');
 
 Route::get('/about', [AboutController::class, 'index'])->name('about');

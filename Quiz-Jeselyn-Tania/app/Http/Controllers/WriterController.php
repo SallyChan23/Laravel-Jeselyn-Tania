@@ -20,4 +20,10 @@ class WriterController extends Controller
 
         return view('writers.show', compact('writer'));
     }
+
+    public function showArticles($id)
+    {
+    $writer = Writer::with('articles')->findOrFail($id);
+    return view('writers.articles', compact('writer'));
+    }
 }
